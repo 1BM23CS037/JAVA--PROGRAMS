@@ -1,0 +1,32 @@
+C:\Users\anjal\OneDrive\Desktop\codes>javac helloworld.java
+
+C:\Users\anjal\OneDrive\Desktop\codes>java helloworld
+hello world
+
+C:\Users\anjal\OneDrive\Desktop\codes>javac fibonacci.java
+
+C:\Users\anjal\OneDrive\Desktop\codes>java fibonacci
+0 1 1 2 3 5 8 13 21 34
+
+C:\Users\anjal\OneDrive\Desktop\codes>javac swap.java
+
+C:\Users\anjal\OneDrive\Desktop\codes>java swap
+the value of x before swap is10
+the value of y before swap is20
+the value of x after swap 20
+the value of y after swap 10
+
+C:\Users\anjal\OneDrive\Desktop\codes>javac si.java
+
+C:\Users\anjal\OneDrive\Desktop\codes>java si
+simple interest=1470.0
+
+C:\Users\anjal\OneDrive\Desktop\codes>javac prime.java
+
+C:\Users\anjal\OneDrive\Desktop\codes>java prime
+37is a prime number
+
+C:\Users\anjal\OneDrive\Desktop>javac triangle.java
+
+C:\Users\anjal\OneDrive\Desktop>java triangle
+it is an isoceles traingle
