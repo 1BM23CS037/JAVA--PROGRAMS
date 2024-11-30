@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+class Book {
+    int id;
+    String name;
+    String author;
+    int numPages;
+
+    // Constructor to initialize book details
+    Book(int id, String name, String author, int numPages) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.numPages = numPages;
+    }
+
+    // Display book details
+    void display() {
+        System.out.println("Book ID: " + id);
+        System.out.println("Book Name: " + name);
+        System.out.println("Author: " + author);
+        System.out.println("Number of Pages: " + numPages);
+    }
+}
+
+class Library {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number of books: ");
+        int n = sc.nextInt();
+        Book[] books = new Book[n];
+
+        // Taking input for each book
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter details of book " + (i + 1) + ": ");
+            System.out.print("Enter Book ID: ");
+            int id = sc.nextInt();
+            sc.nextLine(); // Consume the newline character
+
+            System.out.print("Enter Book Name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Enter Author Name: ");
+            String author = sc.nextLine();
+
+            System.out.print("Enter Number of Pages: ");
+            int numPages = sc.nextInt();
+
+            books[i] = new Book(id, name, author, numPages);
+        }
+
+        // Displaying all book details
+        System.out.println("\nDetails of Books:");
+        for (int i = 0; i < n; i++) {
+            System.out.println("Book " + (i + 1) + ":");
+            books[i].display();
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
