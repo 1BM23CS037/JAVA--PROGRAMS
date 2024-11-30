@@ -1,0 +1,85 @@
+//ANJALI PATEL , 1BM23CS037
+import java.util.Scanner;
+
+class NegativeAgeError extends Exception {
+    int age;
+
+    public NegativeAgeError(int age) {
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Negative Age: " + age;
+    }
+}
+
+class InvalidAgeError extends Exception {
+    int sonAge, fatherAge;
+
+    public InvalidAgeError(int sonAge, int fatherAge) {
+        this.sonAge = sonAge;
+        this.fatherAge = fatherAge;
+    }
+
+    public String toString() {
+        return "Invalid Age: Son's age (" + sonAge + ") is greater than or equal to Father's age (" + fatherAge + ")";
+    }
+}
+
+class Father {
+    int age;
+
+    Father(int age) {
+        try {
+            if (age < 0) {
+                throw new NegativeAgeError(age);
+            }
+            this.age = age;
+        } catch (NegativeAgeError e) {
+            this.age = 20;
+            System.out.println(e);
+        }
+    }
+}
+
+class Son extends Father {
+    int sonAge;
+
+    Son(int sonAge, int fatherAge) {
+        super(fatherAge); 
+        try {
+            if (sonAge < 0) {
+                throw new NegativeAgeError(sonAge);
+            }
+            if (sonAge >= this.age) { 
+                throw new InvalidAgeError(sonAge, this.age);
+            }
+            this.sonAge = sonAge;
+        } catch (NegativeAgeError e) {
+            this.sonAge = 20; 
+            System.out.println(e);
+        } catch (InvalidAgeError e) {
+            this.sonAge = 10; 
+            System.out.println(e);
+        }
+    }
+}
+
+class Exceptions {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Father's age: ");
+        int fatherAge = sc.nextInt();
+
+        System.out.println("Enter Son's age: ");
+        int sonAge = sc.nextInt();
+
+        Son son = new Son(sonAge, fatherAge);
+
+        System.out.println("Father's Age: " + son.age);
+        System.out.println("Son's Age: " + son.sonAge);
+
+        sc.close();
+    }
+}
