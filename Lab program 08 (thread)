@@ -27,7 +27,7 @@ class DepartmentThread extends Thread {
     }
 }
 
-class ThreadExample {
+class threadexample {
     public static void main(String[] args) {
         // Creating instances of both threads
         CollegeThread collegeThread = new CollegeThread();
